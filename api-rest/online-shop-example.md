@@ -5,10 +5,10 @@ Relacional - MySQL o Postgres
 
 **users** 
 *clientes o usuarios del sistema. informacion basica para autenticacion y vincular sus compras*
--id: integer
--name: varchar
--email: varchar
--password: varchar
+-id: integer  
+-name: varchar  
+-email: varchar  
+-password: varchar  
 
 **products**
 *productos disponibles para la venta. informacion que se muestra al usuario e inventario*
