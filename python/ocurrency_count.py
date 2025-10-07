@@ -25,3 +25,20 @@
 #     "canceled": 1,
 #     "unknown": 1
 # }
+
+
+def count_orders_by_status(orders):
+    result = {
+        "pending": 0,
+        "completed": 0,
+        "canceled": 0,
+        "unknown": 0
+    }
+
+    for order in orders:
+        status = order.get("status", "unknown")
+        if status not in result:
+            status = "unknown"
+        result[status] += 1
+
+    return result
