@@ -1,22 +1,20 @@
 class Solution {
     public int solution(int[] A) {
-        int totalSum = 0;
-        int leftSum = 0;
-        int minDiff = Integer.MAX_VALUE;
+        long totalSum = 0;
+        for (int n : A) totalSum += n;
 
-        for (int a : A) {
-            totalSum += a;
-        }
+        long leftSum = 0;
+        long minDiff = Long.MAX_VALUE;
 
-        for (int p = 0; p < A.length; p++) {
-            leftSum += A[p];
-            int rightSum = totalSum - leftSum;
-            int diff = Math.abs(leftSum - rightSum);
+        for (int i = 0; i < A.length - 1; i++) {
+            leftSum += A[i];
+            long rightSum = totalSum - leftSum;
+            long diff = Math.abs(leftSum - rightSum);
             if (diff < minDiff) {
                 minDiff = diff;
             }
         }
 
-        return minDiff;
+        return (int) minDiff;
     }
 }
